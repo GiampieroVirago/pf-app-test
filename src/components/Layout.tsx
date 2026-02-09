@@ -1,5 +1,5 @@
 import { type ReactNode, useState } from 'react';
-import { LayoutDashboard, Wallet, CreditCard, Settings, Menu, X, PlusCircle } from 'lucide-react';
+import { LayoutDashboard, Wallet, CreditCard, Settings, Menu, X, PlusCircle, BarChart3 } from 'lucide-react';
 
 interface LayoutProps {
     children: ReactNode;
@@ -17,6 +17,7 @@ export function Layout({ children, onAddExpense, currentView, onNavigate }: Layo
         { icon: LayoutDashboard, label: 'Dashboard', id: 'dashboard' },
         { icon: Wallet, label: 'Transactions', id: 'transactions' },
         { icon: CreditCard, label: 'Cards', id: 'cards' },
+        { icon: BarChart3, label: 'Analytics', id: 'charts' },
         { icon: Settings, label: 'Settings', id: 'settings' },
     ];
 
@@ -58,8 +59,8 @@ export function Layout({ children, onAddExpense, currentView, onNavigate }: Layo
                                     if (window.innerWidth < 1024) setIsSidebarOpen(false);
                                 }}
                                 className={`w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-colors ${currentView === item.id
-                                        ? 'bg-blue-50 text-blue-600'
-                                        : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                                    ? 'bg-blue-50 text-blue-600'
+                                    : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
                                     }`}
                             >
                                 <item.icon className={`w-5 h-5 mr-3 ${currentView === item.id ? 'text-blue-600' : 'text-gray-400'}`} />
